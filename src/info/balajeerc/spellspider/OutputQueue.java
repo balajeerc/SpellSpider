@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.apache.commons.io.FilenameUtils;
+
 public class OutputQueue {
 	private static OutputQueue Instance;
 	private String outputDirectory;
@@ -18,8 +20,8 @@ public class OutputQueue {
 		consolidatedTextQueue = new ArrayList<String>();
 		consolidatedErrorQueue = new ArrayList<String>();
 		this.outputDirectory = outputDirectory;
-		this.consolidatedErrorOutputFilePath = outputDirectory + "errors.csv";
-		this.consolidatedTextOutputFilepath = outputDirectory + "consolidated.txt";
+		this.consolidatedErrorOutputFilePath = FilenameUtils.concat(outputDirectory,"errors.csv");
+		this.consolidatedTextOutputFilepath = FilenameUtils.concat(outputDirectory,"consolidated.txt");
 		//Create new text and error output files
 		try{
 	    	FileWriter outFile = new FileWriter(consolidatedErrorOutputFilePath);
@@ -79,7 +81,7 @@ public class OutputQueue {
 	    	FileWriter outFile = new FileWriter(consolidatedErrorOutputFilePath,true);
 	    	for(int i=0;i<consolidatedErrorQueue.size();i++){
 	    		outFile.write(consolidatedErrorQueue.get(i));
-    	}
+	    	}
     	consolidatedErrorQueue.clear();
     	outFile.close();
 		}catch(IOException e){

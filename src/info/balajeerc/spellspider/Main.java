@@ -12,8 +12,8 @@ public class Main {
     	String baseUrl = args[0];
     	String baseDirPath = args[1];
     	
-    	System.out.println("Base url at:"+baseUrl);
-    	System.out.println("Base directory at:"+baseDirPath);
+    	System.out.println("Base url at: "+baseUrl);
+    	System.out.println("Base directory at: "+baseDirPath);
     	        
     	String crawlStorageFolder = baseDirPath;
         int numberOfCrawlers = 15;

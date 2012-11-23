@@ -44,5 +44,6 @@
 	<classpathentry kind="lib" path="libs/LanguageTool/morfologik-fsa-1.5.3.jar"/>
 	<classpathentry kind="lib" path="libs/LanguageTool/morfologik-speller-1.5.4.jar"/>
 	<classpathentry kind="lib" path="libs/LanguageTool/morfologik-stemming-1.5.3.jar"/>
+	<classpathentry kind="lib" path="libs/commons-io-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

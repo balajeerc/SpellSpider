@@ -32,6 +32,7 @@ public class SpellSpider extends WebCrawler{
             String href = url.getDomain();           
             boolean patternMatch = BaseUrl.contains(href);
             boolean result = !FILTERS.matcher(href).matches() && patternMatch;
+//            System.out.println("Checking if url:"+href+"must be crawled: "+String.valueOf(result));
             return result;
     }
 

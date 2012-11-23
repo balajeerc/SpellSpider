@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.apache.commons.io.FilenameUtils;
 import org.languagetool.JLanguageTool;
 import org.languagetool.Language;
 import org.languagetool.rules.Rule;
@@ -41,7 +42,7 @@ public class PageChecker {
 	private PageChecker(OutputQueue outputQueue){
         languageTool=null;
         this.outputQueue = outputQueue;
-        outputFilePath = outputQueue.getOutputDirectory()+File.separator+"errors.csv";
+        outputFilePath = FilenameUtils.concat(outputQueue.getOutputDirectory(), "errors.csv");
         try {
         		languageTool = new JLanguageTool(Language.AMERICAN_ENGLISH);
         		languageTool.activateDefaultPatternRules();        		
